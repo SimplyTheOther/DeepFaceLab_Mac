@@ -1,7 +1,23 @@
-# Universal Installation Method
+# Installation via script
+
+Clone the repository and run one of the ``osx-[type]-installer.sh`` scripts from the root directory of DeepFaceLab_Mac.
+
+Don't directly run ``osx-base-installer.sh`` - this just installs shared dependencies and will not lead to a full installation.
+
+Note that you will either need all non-Python library dependencies already installed or a package manager like Homebrew or MacPorts in order to use these scripts.
+
+Non-Python library dependencies include:
+* Python 3 itself
+* cmake
+* ffmpeg
+* Xcode/Xcode Command Line Tools, etc.
+
+# Installation via Anaconda (untested)
+
+This is probably possible given Anaconda has a Mac version but I haven't figured it out. Here's the Linux version.
 
 ### Install Anaconda3
-Download the installer [https://www.anaconda.com/distribution/#linux](https://www.anaconda.com/distribution/#linux). 
+Download the installer for Python 3.7 at [https://www.anaconda.com/distribution/#linux](https://www.anaconda.com/distribution/#linux). 
 
 Initialize conda for your shell.
 ```bash
@@ -15,8 +31,8 @@ conda init bash
 ```bash
 conda create -y -n deepfacelab python=3.6.6 cudatoolkit=9.0 cudnn=7.3.1
 conda activate deepfacelab
-git clone https://github.com/lbfs/DeepFaceLab_Linux.git
-cd DeepFaceLab_Linux
+git clone https://github.com/SimplyTheOther/DeepFaceLab_Mac.git
+cd DeepFaceLab_Mac
 python -m pip install -r requirements-cuda.txt
 ```
 
